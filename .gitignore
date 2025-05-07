@@ -1,0 +1,5 @@
+data/
+.dvc/
+mlruns/
+.env
+**/__pycache__
