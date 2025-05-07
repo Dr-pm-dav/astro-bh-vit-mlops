@@ -1,0 +1,9 @@
+{
+  "dockerFile": "Dockerfile",
+  "hostRequirements": { "gpu": "optional" },  // Gitpod flag
+  "runArgs": ["--gpus=all"],
+  "features": {
+    "ghcr.io/devcontainers/features/nvidia-cuda:1": {}
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
+}
