@@ -1,0 +1,28 @@
+{
+  "name": "BH‑ViT‑GPU",
+  "dockerFile": "Dockerfile",
+  // --- GPU hook ---
+  "runArgs": ["--gpus=all"],
+  "hostRequirements": { "gpu": "required" },      // Gitpod allocates an AWS G5 runner :contentReference[oaicite:1]{index=1}
+  // --- Dev‑Container features ---
+  "features": {
+    "ghcr.io/devcontainers/features/nvidia-cuda:1": {          // installs CUDA drivers inside
+      "version": "12.1"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.10"
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "mhutchie.git-graph",
+        "iterative.dvc",
+        "bierner.markdown-mermaid"
+      ]
+    }
+  }
+}
