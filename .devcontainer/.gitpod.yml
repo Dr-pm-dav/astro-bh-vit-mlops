@@ -1,0 +1,11 @@
+workspace:
+  devContainerPath: .devcontainer/devcontainer.json
+github:
+  prebuilds:
+    addCheck: true
+    addLabel: ready
+# Run a tiny check after the workspace boots
+tasks:
+  - init: echo "🛰️  Dev container built"
+    command: |
+      python --version
